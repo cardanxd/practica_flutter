@@ -1,5 +1,6 @@
 import 'package:tercer_parcial1/src/paginas/gradiente.dart';
 import 'package:tercer_parcial1/src/paginas/suma.dart';
+import 'package:tercer_parcial1/src/paginas/diseno.dart';
 
 import 'package:flutter/material.dart';
 
@@ -12,9 +13,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       showPerformanceOverlay: _showPerfomanceOverlay,
       debugShowCheckedModeBanner: false,
-      home: Center(
+
+      initialRoute: '/',
+      routes: {
+        '/': (context) => Suma(),
+        '/diseno': (context) => Diseno(),
+        '/gradiente': (context) => gradiente(), 
+      },
+
+      /*home: Center(
         child: Suma(),
-      ),
+      ),*/
     );
   }
 }

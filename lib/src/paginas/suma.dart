@@ -13,6 +13,20 @@ class _SumaState extends State<Suma>{
   final myController = TextEditingController();
   final myControllernum2 = TextEditingController();
 
+  void _select(Choice choice){
+    setState(() {
+      switch(choice.title)
+      {
+          case 'Diseño':
+                Navigator.pushNamed(context, '/diseno');
+            break;
+        case 'Diseño':
+                Navigator.pushNamed(context, '/gradiente');
+            break;
+      }
+    });
+  }
+
   @override
   void dispose(){
     myController.dispose();
@@ -40,6 +54,27 @@ class _SumaState extends State<Suma>{
             Toast.show("Pruebita 2", context, duration: Toast.LENGTH_SHORT, gravity: Toast.BOTTOM);
           },
         ),
+
+        PopupMenuButton<Choice>(
+
+          onSelected: _select,
+          itemBuilder: (BuildContext context) {
+            return choices.skip(0).map((Choice choice) {
+              return PopupMenuButton<Choice>(
+                Value: choice,
+                child: Row(
+
+                    children: <Widget>[
+                      Icon(choice.icon, color: Colors.blueAccent),
+                      Padding(padding: const EdgeInsets.all(5)),
+                      Text(choice.title),
+
+                    ],)
+              );
+            }).toList();
+          },
+        ),
+
       ],
       ),
       
@@ -91,5 +126,17 @@ class _SumaState extends State<Suma>{
       ),
     );
   }
-  
+}//Fin de la clase que extiende el state
+
+class Choice{
+  final String title;
+  final IconData icon;
+
+  const Choice({this.title, this.icon});
 }
+
+const List<Choice> choices = const <Choice>[
+  const Choice(title: "Diseño", icon: Icons.toys),
+  const Choice(title: "Gradiente", icon: Icons.view_compact),
+];
+  
