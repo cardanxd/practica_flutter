@@ -14,13 +14,15 @@ class _SumaState extends State<Suma>{
   final myControllernum2 = TextEditingController();
 
   void _select(Choice choice){
+
     setState(() {
+
       switch(choice.title)
       {
           case 'Diseño':
                 Navigator.pushNamed(context, '/diseno');
             break;
-        case 'Diseño':
+        case 'Gradiente':
                 Navigator.pushNamed(context, '/gradiente');
             break;
       }
@@ -59,11 +61,11 @@ class _SumaState extends State<Suma>{
 
           onSelected: _select,
           itemBuilder: (BuildContext context) {
-            return choices.skip(0).map((Choice choice) {
-              return PopupMenuButton<Choice>(
-                Value: choice,
+            return choices.skip(0).map((Choice choice){
+              return PopupMenuItem<Choice>(
+                value: choice,
                 child: Row(
-
+                  
                     children: <Widget>[
                       Icon(choice.icon, color: Colors.blueAccent),
                       Padding(padding: const EdgeInsets.all(5)),
