@@ -18,7 +18,7 @@ class _DisenoState extends State<Diseno> {
       body: Center(
         child: ListView(children: <Widget>[
           Image.asset(
-            "images/john.jpg",
+            "images/UTM.png",
             fit: BoxFit.cover,
           ),
           tituloseccion,
@@ -26,7 +26,7 @@ class _DisenoState extends State<Diseno> {
           Container(
             padding: const EdgeInsets.all(32),
             child: Text(
-              "John Winston Lennon (Liverpool, 9 de octubre de 1940-Nueva York, 8 de diciembre de 1980), fue un artista, músico, multinstrumentista, cantautor, compositor, poeta, dibujante, productor, escritor, pacifista, activista y actor inglés, conocido por ser uno de los miembros fundadores de la banda de rock The Beatles.",
+              "Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese",
               softWrap: true,
             ),
           )
@@ -45,13 +45,13 @@ class _DisenoState extends State<Diseno> {
           Container(
               padding: const EdgeInsets.only(bottom: 8),
               child: Text(
-                "John Lennon",
+                "Universidad Tecnológica Metropolitana",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
               )),
           Text(
-            "Integrante morido de The Beatles UnU)",
+            "Desarrollo de software multiplataforma",
             style: TextStyle(
               color: Colors.grey[500],
             ),
