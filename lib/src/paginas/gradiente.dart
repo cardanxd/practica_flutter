@@ -29,7 +29,7 @@ class _gradienteState extends State<gradiente> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Image.asset(
-                  'images/ejemplo.png',
+                  'images/gps-icon.png',
                   fit: BoxFit.cover,
                 ),//Image.asset
                 Text(
